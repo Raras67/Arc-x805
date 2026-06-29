@@ -1,0 +1,43 @@
+{
+  "name": "agentic-erc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "build:check": "tsc --noEmit",
+    "start": "node dist/index.js",
+    "clean": "rm -rf dist",
+    "start:prod": "NODE_ENV=production node dist/index.js",
+    "rebuild": "npm run clean && npm run build && npm run start",
+    "arbit": "node dist/index.js run arbitrage '{\"amount\":\"5\"}'",
+    "a2a": "node dist/index.js run a2a_handler",
+    "risk": "node dist/index.js run risk_management",
+    "cross": "node dist/index.js run cross_bridge",
+    "liq": "node dist/index.js run liquidity_monitor"
+
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "scriptts": [
+  ],
+  "dependencies": {
+    "@circle-fin/developer-controlled-wallets": "^10.6.0",
+    "@lifi/sdk": "^4.0.0",
+    "axios": "^1.17.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "viem": "^2.52.2",
+    "winston": "^3.19.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.3",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  }
+}
